@@ -1,0 +1,127 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+
+@section Styles{
+<link href="~/Templates/Main/css/custom/convert/convert-input-form.css" rel="stylesheet" type="text/css" />
+}
+
+
+<div class="d-flex flex-column-fluid">
+    <!--begin::Container-->
+    <div class="container ">
+        <!--begin::Row-->
+        <div class="row d-flex justify-content-center">
+
+            <div class="col-md-9 col-sm-12">
+
+                <div>
+                    <ol class="breadcrumb bg-transparent rounded-0 text-muted fs-6 fw-bold">
+                        <li class="breadcrumb-item pe-3"><a href="#" class="pe-3">خانه</a></li>
+                        <li class="breadcrumb-item pe-3"><a href="#" class="pe-3">تبدیل</a></li>
+                        <li class="breadcrumb-item px-3 text-muted">تبدیل طول</li>
+                    </ol>
+                </div>
+
+                <!--begin::Nav Panel Widget 2-->
+             
+                    <!--begin::Card-->
+                    <div class="card card-custom card-border">
+                        <div class="card-header header-convert-input-form">
+                            <div class="card-title">
+                                <h3 class="card-label text-white">
+                                    برای تبدیل آنلاین متر به کیلومتر ، یارد ، فوت ، اینچ و... اطلاعات زیر را وارد کنید و بر روی تبدیل کلیک کنید.
+                                </h3>
+                            </div>
+
+                        </div>
+                        <div class="card-body">
+                            <form class="form">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label>مقدار:</label>
+                                            <input type="number" class="form-control" placeholder="مقدار را وارد کنید">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label for="exampleانتخابd">تبدیل از:</label>
+                                            <select class="form-control" id="exampleانتخابd">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label for="exampleانتخابd">تبدیل به</label>
+                                            <select class="form-control" id="exampleانتخابd">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-center">
+                                    <div class="col-md-4 col-sm-6 text-center">
+                                        <button type="submit" class="btn btn-primary w-100"><i class="fas fa-sync-alt text-white"></i>تبدیل</button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                    <!--end::Card-->
+               
+                <!--begin::Nav Panel Widget 2-->
+                <!--begin::Card-->
+                <div class="row justify-content-center mt-5">
+                    <div class="col-md-12">
+                        <div class="card card-custom">
+                            <div class="card-header ribbon ribbon-clip ribbon-right">
+                                <div class="ribbon-target" style="top: 12px;">
+                                    <span class="ribbon-inner bg-success"></span>نتیجه
+                                </div>
+                            </div>
+                            <div class="card-body text-center">
+                                نتیجه اینجا قرار خواهد گرفت
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end::Card-->
+                <!--begin::Card-->
+                <div class="row justify-content-center mt-5">
+                    <div class="col-md-12">
+                        <div class="card card-custom">
+                            <div class="card-header ribbon ribbon-clip ribbon-right">
+                                <div class="ribbon-target" style="top: 12px;">
+                                    <span class="ribbon-inner bg-success"></span>نتیجه به سایر واحد ها
+                                </div>
+                            </div>
+                            <div class="card-body text-center">
+                                نتیجه اینجا قرار خواهد گرفت
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end::Card-->
+
+
+            </div>
+
+        </div>
+        <!--end::Row-->
+    </div>
+    <!--end::Container-->
+</div>
+
