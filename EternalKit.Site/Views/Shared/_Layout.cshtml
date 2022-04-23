@@ -526,6 +526,16 @@
     <!--end::Page Vendors-->
     <!--begin::Page Scripts(used by this page)-->
     <script src="/Templates/Main/js/pages/widgets.js?v=7.0.6"></script>
-    <!--end::Page Scripts-->
+<!--end::Page Scripts-->
+
+<!--begin:General Scripts(used by this pages)-->
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<!--end::General Scripts-->
+
+<!--begin:Specific Scripts(used by this pages)-->
+@await RenderSectionAsync("Scripts",false)
+<!--end::Specific Scripts-->
+
+
 </body>
 </html>

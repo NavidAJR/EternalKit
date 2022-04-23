@@ -1,4 +1,9 @@
-﻿@{
+﻿@using EternalKit.Domain.Entities
+@using EternalKit.Application.Utilities
+@using EternalKit.Application.Services.LengthConvert
+@model EternalKit.Application.Services.LengthConvert.LengthConvertDto
+@inject ILengthConvertService _lengthConvertService
+@{
     ViewData["Title"] = "Index";
 }
 
@@ -25,97 +30,147 @@
                 </div>
 
                 <!--begin::Nav Panel Widget 2-->
-             
-                    <!--begin::Card-->
-                    <div class="card card-custom card-border">
-                        <div class="card-header header-convert-input-form">
-                            <div class="card-title">
-                                <h3 class="card-label text-white">
-                                    برای تبدیل آنلاین متر به کیلومتر ، یارد ، فوت ، اینچ و... اطلاعات زیر را وارد کنید و بر روی تبدیل کلیک کنید.
-                                </h3>
+                <!--begin::Card-->
+                <div class="card card-custom card-border">
+                    <div class="card-header header-convert-input-form">
+                        <div class="card-title">
+                            <h3 class="card-label text-white">
+                                برای تبدیل آنلاین متر به کیلومتر ، یارد ، فوت ، اینچ و... اطلاعات زیر را وارد کنید و بر روی تبدیل کلیک کنید.
+                            </h3>
+                        </div>
+
+                    </div>
+                    <div class="card-body">
+                        <form class="form" asp-action="Index">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label>مقدار:</label>
+                                        <input asp-for="Value" type="number" class="form-control" placeholder="مقدار را وارد کنید">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="convert-from">تبدیل از:</label>
+                                        <select asp-for="From" class="form-control">
+                                            @foreach (var unit in LengthConversionFactor.LengthUnits)
+                                            {
+                                                <option value="@unit.Value">@unit.Key</option>
+                                            }
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="convert-to">تبدیل به</label>
+                                        <select asp-for="To" class="form-control">
+                                            @foreach (var unit in LengthConversionFactor.LengthUnits)
+                                            {
+                                                <option value="@unit.Value">@unit.Key</option>
+                                            }
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
 
-                        </div>
-                        <div class="card-body">
-                            <form class="form">
-                                <div class="row">
-                                    <div class="col-lg-4">
-                                        <div class="form-group">
-                                            <label>مقدار:</label>
-                                            <input type="number" class="form-control" placeholder="مقدار را وارد کنید">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <div class="form-group">
-                                            <label for="exampleانتخابd">تبدیل از:</label>
-                                            <select class="form-control" id="exampleانتخابd">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <div class="form-group">
-                                            <label for="exampleانتخابd">تبدیل به</label>
-                                            <select class="form-control" id="exampleانتخابd">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
+                            <div class="row justify-content-center">
+                                <div class="col-md-5 text-center">
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label">تعداد ارقام اعشار:</label>
+                                        <div class="col-lg-8">
+                                            <select asp-for="DigitsAfterDecimalPoint" class="form-control">
+                                                <option value="3">3</option>
+                                                <option value="5">5</option>
+                                                <option value="10">10</option>
+                                                <option value="15">15</option>
+                                                <option value="20">20</option>
+                                                <option value="25">25</option>
                                             </select>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="row justify-content-center">
-                                    <div class="col-md-4 col-sm-6 text-center">
-                                        <button type="submit" class="btn btn-primary w-100"><i class="fas fa-sync-alt text-white"></i>تبدیل</button>
+                                <div class="col-md-4 text-center">
+                                    <button type="submit" class="btn btn-primary w-100"><i class="fas fa-sync-alt text-white"></i>تبدیل</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!--end::Card-->
+                <!--begin::Nav Panel Widget 2-->
+                @if (@Model.Result != 0)
+                {
+                    <!--begin::Card-->
+                    <div class="row justify-content-center mt-5">
+                        <div class="col-md-12">
+                            <div class="card card-custom">
+                                <div class="card-header ribbon ribbon-clip ribbon-right">
+                                    <div class="ribbon-target" style="top: 12px;">
+                                        <span class="ribbon-inner bg-success"></span>نتیجه
                                     </div>
                                 </div>
-
-                            </form>
+                                <div class="card-body text-center">
+                                    @Html.Raw(@TextGenerator.ConvertResultTextGenerator(Model.Value,Model.From,Model.Result,Model.To, Model.DigitsAfterDecimalPoint))
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!--end::Card-->
-               
-                <!--begin::Nav Panel Widget 2-->
-                <!--begin::Card-->
-                <div class="row justify-content-center mt-5">
-                    <div class="col-md-12">
-                        <div class="card card-custom">
-                            <div class="card-header ribbon ribbon-clip ribbon-right">
-                                <div class="ribbon-target" style="top: 12px;">
-                                    <span class="ribbon-inner bg-success"></span>نتیجه
-                                </div>
-                            </div>
-                            <div class="card-body text-center">
-                                نتیجه اینجا قرار خواهد گرفت
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--end::Card-->
-                <!--begin::Card-->
-                <div class="row justify-content-center mt-5">
-                    <div class="col-md-12">
-                        <div class="card card-custom">
-                            <div class="card-header ribbon ribbon-clip ribbon-right">
-                                <div class="ribbon-target" style="top: 12px;">
-                                    <span class="ribbon-inner bg-success"></span>نتیجه به سایر واحد ها
-                                </div>
-                            </div>
-                            <div class="card-body text-center">
-                                نتیجه اینجا قرار خواهد گرفت
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--end::Card-->
 
+
+
+                    <!--begin::Card-->
+                    <div class="row justify-content-center mt-5">
+                        <div class="col-md-12">
+                            <div class="card card-custom">
+                                <div class="card-header ribbon ribbon-clip ribbon-right">
+                                    <div class="ribbon-target" style="top: 12px;">
+                                        <span class="ribbon-inner bg-info"></span>نتیجه به سایر واحد ها
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-group list-group-flush">
+                                     
+                                        @foreach (var unit in LengthConversionFactor.LengthUnits.Where(u => u.Value != Model.To && u.Value != Model.From))
+                                        {
+                                            var result = _lengthConvertService.Execute(new LengthConvertDto()
+                                            {
+                                                From = Model.From,
+                                                To = unit.Value,
+                                                Value = Model.Value
+                                            }).Data;
+
+                                            <li class="list-group-item">
+                                                @Html.Raw(@TextGenerator.ConvertResultTextGenerator(Model.Value,Model.From, result,unit.Value, Model.DigitsAfterDecimalPoint))
+                                            </li>
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end::Card-->
+                }
+                else
+                {
+
+                    <!--begin::Card-->
+                    <div class="row justify-content-center mt-5">
+                        <div class="col-md-12">
+                            <div class="card card-custom">
+                                <div class="card-header ribbon ribbon-clip ribbon-right">
+                                    <div class="ribbon-target" style="top: 12px;">
+                                        <span class="ribbon-inner bg-success"></span>نتیجه
+                                    </div>
+                                </div>
+                                <div class="card-body text-center">
+                                    <p class="text-warning">لطفا مقداری را برای تبدیل وارد کنید</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end::Card-->
+                }
 
             </div>
 
@@ -125,3 +180,24 @@
     <!--end::Container-->
 </div>
 
+
+
+@*@section Scripts
+{
+    <script>
+
+        function SendConvertRequest() {
+
+            if (@Model.Result !== 0) {
+                $.post({
+                    url: "/Convert/Length",
+                    data: {
+                        "Value": $("#Value").val(), "From": $("#From").val(), "To": $("#To").val(),
+                        "DigitsAfterDecimalPoint": $("#DigitsAfterDecimalPoint").val()
+                    }
+                });
+            }
+        }
+
+    </script>
+}*@

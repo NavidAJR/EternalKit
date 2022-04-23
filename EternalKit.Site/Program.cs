@@ -1,7 +1,17 @@
+using EternalKit.Application.Services.LengthConvert;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+
+#region IoC
+
+builder.Services.AddTransient<ILengthConvertService, LengthConvertService>();
+
+#endregion
+
 
 var app = builder.Build();
 

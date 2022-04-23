@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\EternalKit.Domain\EternalKit.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
