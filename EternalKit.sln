@@ -17,17 +17,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastrucutre", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{8E23CE45-9101-4A05-876B-302C6C4CFE47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EternalKit.Domain", "EternalKit.Domain\EternalKit.Domain.csproj", "{6B5662D3-3F93-4812-9B70-0905AFC31D39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EternalKit.Domain", "EternalKit.Domain\EternalKit.Domain.csproj", "{6B5662D3-3F93-4812-9B70-0905AFC31D39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EternalKit.Application", "EternalKit.Application\EternalKit.Application.csproj", "{B80257ED-BD8A-4BCC-839C-51AAFCD1F9C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EternalKit.Application", "EternalKit.Application\EternalKit.Application.csproj", "{B80257ED-BD8A-4BCC-839C-51AAFCD1F9C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EternalKit.Infrastructure", "EternalKit.Infrastructure\EternalKit.Infrastructure.csproj", "{10AF4CFA-8E9B-409B-BC4A-69AC94076989}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EternalKit.Infrastructure", "EternalKit.Infrastructure\EternalKit.Infrastructure.csproj", "{10AF4CFA-8E9B-409B-BC4A-69AC94076989}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EternalKit.Persistence", "EternalKit.Persistence\EternalKit.Persistence.csproj", "{571457E2-01CB-4214-B939-067A81D9858A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EternalKit.Persistence", "EternalKit.Persistence\EternalKit.Persistence.csproj", "{571457E2-01CB-4214-B939-067A81D9858A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EternalKit.Common", "EternalKit.Common\EternalKit.Common.csproj", "{A22D0A61-C3F1-41A7-BB5C-4AD7409F5AC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EternalKit.Common", "EternalKit.Common\EternalKit.Common.csproj", "{A22D0A61-C3F1-41A7-BB5C-4AD7409F5AC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EternalKit.Site", "EternalKit.Site\EternalKit.Site.csproj", "{0A6663E8-8FD0-456C-BDBF-5562293E1CC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EternalKit.Site", "EternalKit.Site\EternalKit.Site.csproj", "{0A6663E8-8FD0-456C-BDBF-5562293E1CC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EternalKit.Application.UnitTests", "EternalKit.Application.UnitTests\EternalKit.Application.UnitTests.csproj", "{0B9A7DFB-F821-4665-BFE8-2F011FB942C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,10 @@ Global
 		{0A6663E8-8FD0-456C-BDBF-5562293E1CC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A6663E8-8FD0-456C-BDBF-5562293E1CC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A6663E8-8FD0-456C-BDBF-5562293E1CC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B9A7DFB-F821-4665-BFE8-2F011FB942C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B9A7DFB-F821-4665-BFE8-2F011FB942C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B9A7DFB-F821-4665-BFE8-2F011FB942C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B9A7DFB-F821-4665-BFE8-2F011FB942C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +80,7 @@ Global
 		{571457E2-01CB-4214-B939-067A81D9858A} = {E37565DA-9E69-4994-9A74-2D8C9025AC7D}
 		{A22D0A61-C3F1-41A7-BB5C-4AD7409F5AC4} = {04DAA122-6886-43EA-B25C-DC7A786B81BE}
 		{0A6663E8-8FD0-456C-BDBF-5562293E1CC0} = {8E23CE45-9101-4A05-876B-302C6C4CFE47}
+		{0B9A7DFB-F821-4665-BFE8-2F011FB942C7} = {A05A7A24-EACB-41FB-A571-0ECE94E1B75F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {66571261-3EA2-4469-BA6F-96F702F0D617}
