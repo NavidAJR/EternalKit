@@ -7,7 +7,7 @@ using EternalKit.Application.Dto;
 
 namespace EternalKit.Application.Services.Text.LineCounter
 {
-    public class LineCounterService:ILineCounterService
+    public class LineCounterService : ILineCounterService
     {
         public ResultDto<long> Execute(string text)
         {
