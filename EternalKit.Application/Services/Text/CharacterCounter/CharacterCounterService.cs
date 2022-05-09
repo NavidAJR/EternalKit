@@ -21,7 +21,7 @@ namespace EternalKit.Application.Services.Text.CharacterCounter
                 foreach (var punctuation in _punctuationCharacters)
                 {
                     if (text.Contains(punctuation))
-                        text = text.Replace(punctuation, " ");
+                        text = text.Replace(punctuation, "");
                 }
             }
 
