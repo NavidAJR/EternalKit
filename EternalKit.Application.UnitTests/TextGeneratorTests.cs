@@ -12,7 +12,7 @@ namespace EternalKit.Application.UnitTests
     public class TextGeneratorTests
     {
         [Test]
-        public void GenerateLengthConvertResultText_Scenario_ReturnResultInCorrectHtmlFormat()
+        public void GenerateLengthConvertResultText_ConvertCentimeterToMilimeter_ReturnResultInCorrectHtmlFormat()
         {
             //Act
             var result = TextGenerator.GenerateLengthConvertResultText(1, 0.01m, 10, 0.001m);
