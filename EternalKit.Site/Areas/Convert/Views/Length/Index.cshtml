@@ -110,7 +110,7 @@
                                     </div>
                                 </div>
                                 <div class="card-body text-center">
-                                    @Html.Raw(@TextGenerator.ConvertResultTextGenerator(Model.Value,Model.From,Model.Result,Model.To, Model.DigitsAfterDecimalPoint))
+                                    @Html.Raw(@TextGenerator.GenerateLengthConvertResultText(Model.Value,Model.From,Model.Result,Model.To, Model.DigitsAfterDecimalPoint))
                                 </div>
                             </div>
                         </div>
@@ -141,7 +141,7 @@
                                             }).Data;
 
                                             <li class="list-group-item">
-                                                @Html.Raw(@TextGenerator.ConvertResultTextGenerator(Model.Value,Model.From, result,unit.Value, Model.DigitsAfterDecimalPoint))
+                                                @Html.Raw(@TextGenerator.GenerateLengthConvertResultText(Model.Value,Model.From, result,unit.Value, Model.DigitsAfterDecimalPoint))
                                             </li>
                                         }
                                     </ul>

@@ -9,7 +9,7 @@ namespace EternalKit.Application.Utilities
 {
     public static class TextGenerator
     {
-        public static string ConvertResultTextGenerator(decimal fromValue, decimal fromUnitValue, decimal result, decimal toUnitValue, int digitsAfterDecimalPoint)
+        public static string GenerateLengthConvertResultText(decimal fromValue, decimal fromUnitValue, decimal result, decimal toUnitValue, int digitsAfterDecimalPoint = 3)
         {
             var fromUnitText = LengthConversionFactor.LengthUnits.FirstOrDefault(u => u.Value == fromUnitValue).Key;
             var toUnitText = LengthConversionFactor.LengthUnits.FirstOrDefault(u => u.Value == toUnitValue).Key;
