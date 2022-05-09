@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using EternalKit.Application.Dto;
 
-namespace EternalKit.Application.Services.LengthConvert
+namespace EternalKit.Application.Services.Convert.Length
 {
     public interface ILengthConvertService
     {

@@ -1,6 +1,6 @@
 ﻿using EternalKit.Application.Dto;
 
-namespace EternalKit.Application.Services.LengthConvert;
+namespace EternalKit.Application.Services.Convert.Length;
 
 public class LengthConvertService : ILengthConvertService
 {

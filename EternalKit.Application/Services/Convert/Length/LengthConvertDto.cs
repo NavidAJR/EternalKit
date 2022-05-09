@@ -1,4 +1,4 @@
-﻿namespace EternalKit.Application.Services.LengthConvert;
+﻿namespace EternalKit.Application.Services.Convert.Length;
 
 public class LengthConvertDto
 {

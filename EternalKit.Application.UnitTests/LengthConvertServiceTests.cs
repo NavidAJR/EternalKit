@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
-using EternalKit.Application.Services.LengthConvert;
+using EternalKit.Application.Services.Convert.Length;
 
 namespace EternalKit.Application.UnitTests
 {
