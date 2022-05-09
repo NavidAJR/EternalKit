@@ -22,9 +22,9 @@
             <div class="col-md-9 col-sm-12">
 
                 <div>
-                    <ol class="breadcrumb bg-transparent rounded-0 text-muted fs-6 fw-bold">
-                        <li class="breadcrumb-item pe-3"><a href="#" class="pe-3">خانه</a></li>
-                        <li class="breadcrumb-item pe-3"><a href="#" class="pe-3">تبدیل</a></li>
+                    <ol class="breadcrumb bg-transparent rounded-0 text-muted fs-6 fw-bold my-5">
+                        <li class="breadcrumb-item pe-3"><a href="/" class="pe-3">خانه</a></li>
+                        <li class="breadcrumb-item pe-3"><a asp-area="Convert" asp-controller="Home" class="pe-3">تبدیل</a></li>
                         <li class="breadcrumb-item px-3 text-muted">تبدیل طول</li>
                     </ol>
                 </div>
@@ -35,7 +35,7 @@
                     <div class="card-header header-convert-input-form">
                         <div class="card-title">
                             <h3 class="card-label text-white">
-                                برای تبدیل آنلاین متر به کیلومتر ، یارد ، فوت ، اینچ و... اطلاعات زیر را وارد کنید و بر روی تبدیل کلیک کنید.
+                                برای تبدیل واحد های مختلف طول اطلاعات زیر را وارد کنید و بر روی تبدیل کلیک کنید.
                             </h3>
                         </div>
 
@@ -62,7 +62,7 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label for="convert-to">تبدیل به</label>
+                                        <label for="convert-to">تبدیل به:</label>
                                         <select asp-for="To" class="form-control">
                                             @foreach (var unit in LengthConversionFactor.LengthUnits)
                                             {

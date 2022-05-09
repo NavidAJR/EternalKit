@@ -1,7 +1,59 @@
 ﻿
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "تبدیل";
 }
 
-<h1>Index</h1>
+<div class="d-flex flex-column-fluid">
+    <!--begin::Container-->
+    <div class="container mx-10">
+        <!--begin::Row-->
+        <div class="row">
+            
+            <div>
+                <ol class="breadcrumb bg-transparent rounded-0 text-muted fs-6 fw-bold my-5">
+                    <li class="breadcrumb-item pe-3"><a href="/" class="pe-3">خانه</a></li>
+                    <li class="breadcrumb-item px-3 text-muted">تبدیل</li>
+                </ol>
+            </div>
+
+            <!--begin::Nav Panel Widget 2-->
+            <div class="card card-custom gutter-b">                
+                
+                <div class="card-header justify-content-center">
+                    <div class="card-title">
+                        <h3 class="card-label"><i class="fas fa-ruler"></i> یکی از انواع تبدیلات زیر را انتخاب کنید <i class="fas fa-cube"></i></h3>
+                    </div>
+                </div>
+
+                <!--begin::Body-->
+                <div class="card-body ">
+
+                    <div class="row mb-5">
+                        <div class="col-md-3 col-sm-6 my-2">
+                            <a asp-area="Convert" asp-controller="Length" class="btn btn-block btn-sm btn-light-danger border-danger font-weight-bolder font-size-h5 py-25"><i class="fas fa-ruler icon-4x mb-2"></i><br/>تبدیل طول</a>
+                        </div>
+
+                        <div class="col-md-3 col-sm-6 my-2">
+                            <a href="#" class="btn btn-block btn-sm btn-light-primary border-primary font-weight-bolder font-size-h5 py-25"><i class="fas fa-square-full icon-4x mb-2"></i><br/>تبدیل مساحت</a>
+                        </div>
+
+                        <div class="col-md-3 col-sm-6 my-2">
+                            <a href="#" class="btn btn-block btn-sm btn-light-success border-success font-weight-bolder font-size-h5 py-25"><i class="fas fa-cube icon-4x mb-2"></i><br/>تبدیل حجم</a>
+                        </div>
+
+                        <div class="col-md-3 col-sm-6 my-2">
+                            <a href="#" class="btn btn-block btn-sm btn-light-warning border-warning font-weight-bolder font-size-h5 py-25"><i class="far fa-lightbulb icon-4x mb-2"></i><br/>تبدیل وزن</a>
+                        </div>
+                    </div>
+
+                </div>
+                <!--end::Body-->
+            </div>
+            <!--begin::Nav Panel Widget 2-->
+
+        </div>
+        <!--end::Row-->
+    </div>
+    <!--end::Container-->
+</div>
 
