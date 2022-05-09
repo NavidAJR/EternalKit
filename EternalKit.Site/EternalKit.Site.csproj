@@ -15,8 +15,4 @@
     <ProjectReference Include="..\EternalKit.Application\EternalKit.Application.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Areas\Text\Controllers\" />
-  </ItemGroup>
-
 </Project>
