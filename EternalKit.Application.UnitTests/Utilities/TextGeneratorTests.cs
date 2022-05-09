@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using EternalKit.Application.Utilities;
 using NUnit.Framework;
 
-namespace EternalKit.Application.UnitTests
+namespace EternalKit.Application.UnitTests.Utilities
 {
     [TestFixture]
     public class TextGeneratorTests

@@ -4,5 +4,5 @@ namespace EternalKit.Application.Services.Text.WordCounter;
 
 public interface IWordCounterService
 {
-    ResultDto<int> Execute(string text);
+    ResultDto<int> Execute(string text, bool countPunctuationCharacters);
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using EternalKit.Application.Services.Convert.Length;
 
-namespace EternalKit.Application.UnitTests
+namespace EternalKit.Application.UnitTests.Convert
 {
     [TestFixture]
     public class LengthConvertServiceTests

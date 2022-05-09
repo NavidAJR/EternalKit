@@ -10,9 +10,27 @@ namespace EternalKit.Application.Services.Text.WordCounter
 {
     public class WordCounterService:IWordCounterService
     {
-        public ResultDto<int> Execute(string text)
+        private string[] _punctuationCharacters = new string[]
         {
-            var words = text.Split(' ');
+            ".", "?", "!", ",", ":", ";", "-", "{", "}", "[", "]", "(", ")", "\"", "..."
+        };
+
+        public ResultDto<int> Execute(string text, bool countPunctuationCharacters)
+        {
+
+            if (!countPunctuationCharacters)
+            {
+                foreach (var punctuation in _punctuationCharacters)
+                {
+                    if (text.Contains(punctuation))
+                        text = text.Replace(punctuation, " ");
+                }
+            }
+
+
+            var words = text.Trim().Split(" ", StringSplitOptions.RemoveEmptyEntries);
+
+
             return new ResultDto<int>()
             {
                 IsSuccess = true,
