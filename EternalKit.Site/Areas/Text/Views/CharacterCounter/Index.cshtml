@@ -1,0 +1,122 @@
+﻿@model EternalKit.Application.Services.Text.CharacterCounter.CharacterCounterDto
+@{
+    ViewData["Title"] = "Index";
+}
+
+@section Styles{
+<link href="~/Templates/Main/css/custom/convert/convert-input-form.css" rel="stylesheet" type="text/css" />
+}
+
+
+<div class="d-flex flex-column-fluid">
+    <!--begin::Container-->
+    <div class="container ">
+        <!--begin::Row-->
+        <div class="row d-flex justify-content-center">
+
+            <div class="col-md-9 col-sm-12">
+
+                <div>
+                    <ol class="breadcrumb bg-transparent rounded-0 text-muted fs-6 fw-bold my-5">
+                        <li class="breadcrumb-item pe-3"><a href="/" class="pe-3">خانه</a></li>
+                        <li class="breadcrumb-item pe-3"><a asp-area="Text" asp-controller="Home" class="pe-3">متن</a></li>
+                        <li class="breadcrumb-item px-3 text-muted">شمارشگر حروف</li>
+                    </ol>
+                </div>
+
+                <!--begin::Nav Panel Widget 2-->
+                <!--begin::Card-->
+                <div class="card card-custom card-border">
+                    <div class="card-header header-convert-input-form">
+                        <div class="card-title">
+                            <h3 class="card-label text-white">
+                                برای شمارش حروف متن خود را وارد کنید.
+                            </h3>
+                        </div>
+
+                    </div>
+                    <div class="card-body">
+                        <form class="form" asp-action="Index">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label>متن:</label>
+                                        <textarea asp-for="Text" rows="7" type="text" class="form-control" placeholder="متن را وارد کنید"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <input asp-for="CountSpace" type="checkbox" /> شمارش فضای خالی به عنوان حروف
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="form-group">
+                                        <input asp-for="CountPunctuationCharacters" type="checkbox" /> شمارش علائم نگارشی
+                                    </div>
+                                </div>
+                                <div class="col-md-5 text-center">
+                                    <button type="submit" class="btn btn-primary w-100"><i class="fas fa-sync-alt text-white"></i>شمارش</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <!--end::Card-->
+                <!--begin::Nav Panel Widget 2-->
+                @if (Model.CharactersCount != 0)
+                {
+                    <!--begin::Card-->
+                    <div class="row justify-content-center mt-5">
+                        <div class="col-md-12">
+                            <div class="card card-custom">
+                                <div class="card-header ribbon ribbon-clip ribbon-right">
+                                    <div class="ribbon-target" style="top: 12px;">
+                                        <span class="ribbon-inner bg-success"></span>نتیجه
+                                    </div>
+                                </div>
+                                <div class="card-body text-center">
+                                    <p>متن شما <span class="text text-primary">@Model.CharactersCount</span> حرف دارد.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end::Card-->
+                    <!--begin::Card-->
+                    <div class="row justify-content-center mt-5">
+                        <div class="col-md-12">
+                            <div class="card card-custom">
+                                <div class="card-header ribbon ribbon-clip ribbon-right">
+                                    <div class="ribbon-target" style="top: 12px;">
+                                        <span class="ribbon-inner bg-info"></span>سایر نتایج
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-group list-group-flush">
+
+                                        <li class="list-group-item">
+                                            <p>متن شما <span class="text text-primary">@Model.WordsCount</span> کلمه دارد.</p>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <p>متن شما <span class="text text-primary">@Model.LinesCount</span> خط دارد.</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end::Card-->
+                }
+
+            </div>
+
+        </div>
+        <!--end::Row-->
+    </div>
+    <!--end::Container-->
+</div>
+
+

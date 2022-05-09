@@ -4,21 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EternalKit.Application.Dto;
+using EternalKit.Domain.Entities;
 
 namespace EternalKit.Application.Services.Text.CharacterCounter
 {
     public class CharacterCounterService : ICharacterCounterService
     {
-        private readonly string[] _punctuationCharacters = new string[]
-        {
-            ".", "?", "!", ",", ":", ";", "-", "{", "}", "[", "]", "(", ")", "\"", "..."
-        };
-
         public ResultDto<long> Execute(string text, bool countSpace, bool countPunctuationCharacters)
         {
             if (!countPunctuationCharacters)
             {
-                foreach (var punctuation in _punctuationCharacters)
+                foreach (var punctuation in Punctuation.PunctuationCharacters)
                 {
                     if (text.Contains(punctuation))
                         text = text.Replace(punctuation, "");

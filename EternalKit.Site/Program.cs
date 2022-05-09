@@ -1,4 +1,7 @@
 using EternalKit.Application.Services.Convert.Length;
+using EternalKit.Application.Services.Text.CharacterCounter;
+using EternalKit.Application.Services.Text.LineCounter;
+using EternalKit.Application.Services.Text.WordCounter;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +12,9 @@ builder.Services.AddControllersWithViews();
 #region IoC
 
 builder.Services.AddTransient<ILengthConvertService, LengthConvertService>();
+builder.Services.AddTransient<ICharacterCounterService, CharacterCounterService>();
+builder.Services.AddTransient<IWordCounterService, WordCounterService>();
+builder.Services.AddTransient<ILineCounterService, LineCounterService>();
 
 #endregion
 
