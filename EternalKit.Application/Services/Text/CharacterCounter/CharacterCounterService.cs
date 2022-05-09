@@ -4,20 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EternalKit.Application.Dto;
-using EternalKit.Application.Services.Convert.Length;
 
-namespace EternalKit.Application.Services.Text.WordCounter
+namespace EternalKit.Application.Services.Text.CharacterCounter
 {
-    public class WordCounterService:IWordCounterService
+    public class CharacterCounterService : ICharacterCounterService
     {
         private readonly string[] _punctuationCharacters = new string[]
         {
             ".", "?", "!", ",", ":", ";", "-", "{", "}", "[", "]", "(", ")", "\"", "..."
         };
 
-        public ResultDto<long> Execute(string text, bool countPunctuationCharacters)
+        public ResultDto<long> Execute(string text, bool countSpace, bool countPunctuationCharacters)
         {
-
             if (!countPunctuationCharacters)
             {
                 foreach (var punctuation in _punctuationCharacters)
@@ -28,14 +26,20 @@ namespace EternalKit.Application.Services.Text.WordCounter
             }
 
 
-            var words = text.Trim().Split(" ", StringSplitOptions.RemoveEmptyEntries);
+            if (countSpace)
+                return new ResultDto<long>()
+                {
+                    IsSuccess = true,
+                    Message = "عملیات با موفقیت انجام شد.",
+                    Data = text.ToCharArray().Length
+                };
 
 
             return new ResultDto<long>()
             {
                 IsSuccess = true,
                 Message = "عملیات با موفقیت انجام شد.",
-                Data = words.Length
+                Data = text.Replace(" ", "").ToCharArray().Length
             };
         }
     }
