@@ -2,7 +2,7 @@
 {
     public static class DigitSeparator
     {
-        public static string Separate(this decimal input, int digitsAfterDecimalPoint)
+        public static string Separate(this decimal input, int digitsAfterDecimalPoint = 3)
         {
             //To check if the number has decimal point.
             if (!input.ToString().Contains('.'))
@@ -18,15 +18,15 @@
             //Add , character after every 3 number.
             var mainPart = "";
             var separatorIndex = 0;
-            foreach (var digit in beforeDecimalPoint.ToCharArray())
+            foreach (var digit in beforeDecimalPoint.ToCharArray().Reverse())
             {
                 if (separatorIndex == 3)
                 {
-                    mainPart += ",";
+                    mainPart = "," + mainPart;
                     separatorIndex = 0;
                 }
 
-                mainPart += digit;
+                mainPart = digit + mainPart;
                 separatorIndex++;
             }
 
