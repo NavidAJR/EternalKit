@@ -42,6 +42,7 @@
                                     <div class="form-group">
                                         <label>متن:</label>
                                         <textarea asp-for="Text" rows="7" type="text" class="form-control" placeholder="متن را وارد کنید"></textarea>
+                                        <span asp-validation-for="Text" class="text text-danger"></span>
                                     </div>
                                 </div>
                             </div>
@@ -51,13 +52,16 @@
                                         <input asp-for="CountSpace" type="checkbox" /> شمارش فضای خالی به عنوان حروف
                                     </div>
                                 </div>
+                           
+                                <div class="col-md-4 text-center">
+                                    <button type="submit" class="btn btn-primary w-100"><i class="fas fa-sync-alt text-white"></i>شمارش</button>
+                                </div>
+                            </div>
+                            <div class="row">
                                 <div class="col-3">
                                     <div class="form-group">
                                         <input asp-for="CountPunctuationCharacters" type="checkbox" /> شمارش علائم نگارشی
                                     </div>
-                                </div>
-                                <div class="col-md-5 text-center">
-                                    <button type="submit" class="btn btn-primary w-100"><i class="fas fa-sync-alt text-white"></i>شمارش</button>
                                 </div>
                             </div>
 
@@ -118,5 +122,3 @@
     </div>
     <!--end::Container-->
 </div>
-
-
